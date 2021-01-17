@@ -1,0 +1,351 @@
+{
+	"info": {
+		"_postman_id": "eba59ea4-a4ef-435e-8609-78b144e780d8",
+		"name": "TodoApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User ",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Test User 3\",\r\n    \"email\":\"test3@gmail.com\",\r\n    \"password\":\"test123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/todo/profile/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"todo",
+								"profile",
+								""
+							]
+						},
+						"description": "http://localhost:8000/todo/profile/"
+					},
+					"response": []
+				},
+				{
+					"name": "Login ",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token 9a7e81f8a7d12e34d044b43bdab30d9ca19dbb4f",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"test3@gmail.com\",\r\n    \"password\":\"test123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/todo/login/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"todo",
+								"login",
+								""
+							]
+						},
+						"description": "http://localhost:8000/todo/login/"
+					},
+					"response": []
+				},
+				{
+					"name": "Profile Update ",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "token e8dd826b92b2b5fd5765552fd2a71644c362e377",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 6,\r\n    \"name\": \"Test User\",\r\n    \"email\": \"test4@gmail.com\",\r\n    \"password\":\"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/todo/profile/6/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"todo",
+								"profile",
+								"6",
+								""
+							]
+						},
+						"description": "http://localhost:8000/todo/profile/6/\r\n\r\nPut user ID of update"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Todo App",
+			"item": [
+				{
+					"name": "Post Value in TODO List",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "token e8dd826b92b2b5fd5765552fd2a71644c362e377",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \r\n        \"task_text\": \"Commit Final Changes\"\r\n        \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/todo/feed/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"todo",
+								"feed",
+								""
+							]
+						},
+						"description": "Post a new TODO List"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Todo Value",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "token e8dd826b92b2b5fd5765552fd2a71644c362e377",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/todo/feed/16/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"todo",
+								"feed",
+								"16",
+								""
+							]
+						},
+						"description": "Delete Particular TODO list value."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Todo List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "token e8dd826b92b2b5fd5765552fd2a71644c362e377",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/todo/feed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"todo",
+								"feed"
+							]
+						},
+						"description": "Get Todo List"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Particular  Todo List Value",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "token e8dd826b92b2b5fd5765552fd2a71644c362e377",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \r\n        \"task_text\": \"Making Final Changes\"\r\n        \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/todo/feed/16/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"todo",
+								"feed",
+								"16",
+								""
+							]
+						},
+						"description": "Update tasks in todo\r\n"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

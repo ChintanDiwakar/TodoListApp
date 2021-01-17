@@ -1,5 +1,6 @@
 from django.db import models
-
+from rest_framework.response import Response
+from rest_framework import status
 from django.contrib.auth.models import BaseUserManager
 from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
@@ -67,5 +68,5 @@ class ProfileFeedItem(models.Model):
     task_text = models.CharField(max_length=255)
     created_on = models.DateTimeField(auto_now_add=True)
 
-    # def __str__(self):
-    #     return self.task_text
+    def __str__(self):
+        return self.task_text
