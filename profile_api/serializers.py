@@ -5,11 +5,6 @@ from profile_api import models
 from rest_framework.response import Response
 
 
-class HelloSerializer(serializers.Serializer):
-    """ Searialize a name field for testing out APIView"""
-    name = serializers.CharField(max_length=10)
-
-
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.UserProfile
